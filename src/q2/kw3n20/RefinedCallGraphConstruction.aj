@@ -11,8 +11,6 @@ public aspect RefinedCallGraphConstruction {
     pointcut nodeCall(): call(public int q2..*(int));
     pointcut edgeCheck(): withincode(public int q2..*(int));
 
-    pointcut refinedNodeCall(int i): nodeCall() && args(i);
-
     // inter-type declarations, avoid repeat entries
     Set<String> nodes = new HashSet<>();
     Set<String> edges = new HashSet<>();
@@ -39,12 +37,6 @@ public aspect RefinedCallGraphConstruction {
         edges.remove(caller + " -> " + called);
         exceptions.add(e.toString());
     }
-
-//    after() returning: nodeCall() && edgeCheck() {
-//        String caller = thisEnclosingJoinPointStaticPart.getSignature().toLongString();
-//        String called = thisJoinPointStaticPart.getSignature().toLongString();
-//        edges.add(caller + " -> " + called);
-//    }
 
     // Write the files after execution of main method
     after(): execution(public static void q2..main(..)) {

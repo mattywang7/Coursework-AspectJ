@@ -6,6 +6,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * q1-nodes.csv
+ * q1-edges.csv
+ */
 public aspect DynamicCallGraphConstruction {
     // pointcut definitions
     pointcut nodeCall(): call(public int q1..*(int));
