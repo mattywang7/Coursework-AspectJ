@@ -1,7 +1,5 @@
 package q3.kw3n20;
 
-import q3.DemoException;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
