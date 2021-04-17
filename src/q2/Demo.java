@@ -6,6 +6,10 @@ public class Demo {
         B b = new B();
 
         a.foo(1);
-        b.foo(-1);
+        try {
+            b.foo(-1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -10,6 +10,7 @@ public aspect RefinedCallGraphConstruction {
     // pointcut definitions
     pointcut nodeCall(): call(public int q2..*(int));
     pointcut edgeCheck(): withincode(public int q2..*(int));
+    pointcut nodeExecution(): execution(public int q2..*(int));
 
     // inter-type declarations, avoid repeat entries
     Set<String> nodes = new HashSet<>();

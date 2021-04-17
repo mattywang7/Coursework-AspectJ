@@ -1,7 +1,7 @@
 package q3;
 
 public class B {
-    public int foo(int a) {
+    public int foo(int a) throws DemoException {
         if (a % 3 == 0) {
             bar(a);
         } else {
@@ -10,7 +10,7 @@ public class B {
         return 0;
     }
 
-    public int bar(int b) {
+    public int bar(int b) throws DemoException {
         if (b % 2 == 0) {
             throw new DemoException();
         }
@@ -28,4 +28,17 @@ public class B {
         }
         return b + b;
     }
+
+//    public int foo(int a) {
+//        bar(1);
+//        return 0;
+//    }
+//
+//    public int bar(int b) {
+//        return baz(b);
+//    }
+//
+//    public int baz(int a) {
+//        return a + a;
+//    }
 }
